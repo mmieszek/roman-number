@@ -2,6 +2,8 @@ const arabicToRoman = require('./arabicToRoman')
 const romanToArabic = require('./romanToArabic')
 
 function RomanNumber(number) {
+  if (!number) throw new Error('value required')
+  
   if (this instanceof RomanNumber) {
     if (typeof number === 'string') {
       this.roman = number
