@@ -1,5 +1,7 @@
 const RomanNumber = require('./RomanNumber')
 
+jest.setTimeout(3000)
+
 test('conversion of arabic number', () => {
   const number = new RomanNumber(5)
   expect(number.toString()).toBe('V')
@@ -43,4 +45,11 @@ test('throws Error when number is out of range', () => {
     new RomanNumber(4000)
   };
   expect(t).toThrowError('invalid range');
+})
+
+test('throws Error when value is invalid', () => {
+  const t = () => {
+    new RomanNumber('error')
+  };
+  expect(t).toThrowError('invalid value');
 })
