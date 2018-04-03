@@ -7,6 +7,7 @@ function arabicToRoman(arabic) {
   while (number > 0) {
     for (var i = 0; i < values.length; i++) {
       const value = values[i]
+      // findthe freatest roman symbol smaller than the argument number
       if (value<= number) {
         number = number - value
         const index = values.indexOf(value)

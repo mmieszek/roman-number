@@ -6,7 +6,7 @@ function validateRange(number) {
 }
 
 function RomanNumber(number) {
-  if (!number) throw new Error('value required')
+  if (number === null || number === undefined) throw new Error('value required')
 
   if (this instanceof RomanNumber) {
     if (typeof number === 'string') {
