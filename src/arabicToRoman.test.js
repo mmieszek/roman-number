@@ -1,5 +1,7 @@
 const arabicToRoman = require('./arabicToRoman')
 
+jest.setTimeout(3000)
+
 test('1 equals I', () => {
   expect(arabicToRoman(1)).toBe('I')
 })
