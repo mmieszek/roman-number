@@ -37,3 +37,10 @@ test('throws Error when the passed value is null', () => {
   };
   expect(t).toThrowError('value required');
 })
+
+test('throws Error when number is out of range', () => {
+  const t = () => {
+    new RomanNumber(4000)
+  };
+  expect(t).toThrowError('invalid range');
+})
