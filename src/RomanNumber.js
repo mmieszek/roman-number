@@ -12,6 +12,13 @@ function RomanNumber(number) {
     if (typeof number === 'string') {
       this.roman = number
       this.arabic = romanToArabic(number)
+
+      // If a roman numeral is valid, after converting it twice we should get the same
+      // numeral. Real world solution would be to use a regexp from stackoverflow but 
+      // this is original and works :)
+      if (number !== RomanNumber(this.arabic).toString()) {
+        throw new Error('invalid value')
+      }
     }
     if (typeof number === 'number') {
       validateRange(number)

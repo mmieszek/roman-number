@@ -42,7 +42,7 @@ test('throws Error when the passed value is null', () => {
 
 test('throws Error when number is out of range', () => {
   const t = () => {
-    new RomanNumber(4000)
+    new RomanNumber(10000)
   };
   expect(t).toThrowError('invalid range');
 })
@@ -58,14 +58,14 @@ test('throws Error when value is invalid', () => {
   const t = () => {
     new RomanNumber('error')
   };
-  expect(t).toThrowError('invalid value');
+  expect(t).toThrowError('invalid value')
 })
 
 test('throws Error when roman value is invalid', () => {
   const t = () => {
     new RomanNumber('IIII')
   };
-  expect(t).toThrowError('invalid value');
+  expect(t).toThrowError('invalid value')
 })
 
 test('test all the scenarios', () => {
@@ -74,6 +74,31 @@ test('test all the scenarios', () => {
   expect(RomanNumber(3).toString()).toBe('III')
   expect(RomanNumber(4).toString()).toBe('IV')
   expect(RomanNumber(5).toString()).toBe('V')
-//   0, 1, 3, 4, 5, ‘I’, ‘III’, ‘IIII’, ‘IV’, ‘V’, 1968, ‘1473’, 2999, 3000, 10000, ‘CDXXIX’, ‘CD1X’,
-// ‘error’, ‘MCDLXXXII’, ‘MCMLXXX’, ‘MMMMCMXCIX’, ‘MMMMDMXCIX’
+  
+  expect(RomanNumber(1968).toString()).toBe('MCMLXVIII')
+  expect(RomanNumber(1473).toString()).toBe('MCDLXXIII')
+  expect(RomanNumber(2999).toString()).toBe('MMCMXCIX')
+  expect(RomanNumber(3000).toString()).toBe('MMM')
+
+  expect(RomanNumber('I').toInt()).toBe(1)
+  expect(RomanNumber('II').toInt()).toBe(2)
+  expect(RomanNumber('III').toInt()).toBe(3)
+  expect(RomanNumber('IV').toInt()).toBe(4)
+  expect(RomanNumber('V').toInt()).toBe(5)
+  expect(RomanNumber('CDXXIX').toInt()).toBe(429)
+
+  let t = () => {
+    RomanNumber('CD1X')
+  }
+  expect(t).toThrowError('invalid value')
+
+  expect(RomanNumber('MCDLXXXII').toInt()).toBe(1482)
+  t = () => {
+    RomanNumber('MMMMCMXCIX')
+  }
+  expect(t).toThrowError('invalid range')
+  t = () => {
+    RomanNumber('MMMMDMXCIX')
+  }
+  expect(t).toThrowError('invalid range')
 })
