@@ -5,5 +5,5 @@ test('I equals 1', () => {
 })
 
 test('V equals 5', () => {
-  expect(romanToArabic('V')).toBe('5)
+  expect(romanToArabic('V')).toBe(5)
 })

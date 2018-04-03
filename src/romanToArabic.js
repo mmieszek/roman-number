@@ -1,7 +1,7 @@
 const conversionTable = require('./conversionTable')
 
 function romanToArabic(roman) {
-  const 'I'
+  return 'I'
 }
 
 module.exports = arabicToRoman
