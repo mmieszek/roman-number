@@ -1,5 +1,8 @@
+const conversionTable = require('./conversionTable')
+
 function arabicToRoman(arabic) {
-  return 'I'
+  const index = conversionTable.arabic.indexOf(arabic)
+  return conversionTable.roman[index]
 }
 
 module.exports = arabicToRoman

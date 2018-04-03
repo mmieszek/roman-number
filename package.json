@@ -8,6 +8,7 @@
     "jest": "^22.4.3"
   },
   "scripts": {
-    "test": "yarn jest src"
+    "test": "yarn jest src",
+    "watch": " yarn jest src --watch"
   }
 }
